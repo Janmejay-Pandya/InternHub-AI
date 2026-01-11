@@ -85,7 +85,7 @@ if submitted:
         with st.spinner("🔍 Analyzing with AI..."):
             try:
                 response = requests.post(
-                    "http://localhost:8081/analyze",
+                    "https://internhub-ai-hsz1.onrender.com/analyze",
                     json=payload,
                     timeout=60
                 )
