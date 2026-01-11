@@ -45,6 +45,22 @@ I built a minimal AI-powered feature that:
 - Focus on explainability and real-world usability
 
 ---
+## 🏗️ System Architecture
+
+```mermaid
+flowchart LR
+    User[User / Student]
+    Streamlit[Streamlit Frontend]
+    FastAPI[FastAPI Backend]
+    Groq[Groq LLM API]
+
+    User --> Streamlit
+    Streamlit -->|POST analyze request| FastAPI
+    FastAPI -->|Prompt request| Groq
+    Groq -->|LLM response| FastAPI
+    FastAPI -->|AI analysis result| Streamlit
+    Streamlit -->|Resume download docx| User
+```
 
 ## 🛠 Tech Stack Used
 
